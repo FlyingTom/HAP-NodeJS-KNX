@@ -8,7 +8,7 @@
     "ed25519": "git://github.com/dazoe/ed25519",
     "mdns": "^2.2.4",
     "node-persist": "0.0.3",
-    "srp": "git://github.com/KhaosT/node-srp"
+    "srp": "git://github.com/KhaosT/node-srp",
     "node-eibd": "git://github.com/andreek/node-eibd"
   },
   "devDependencies": {},
@@ -21,7 +21,7 @@
     "url": "https://github.com/snowdd1/HAP-NodeJS-KNX.git"
   },
   "author": "Khaos Tian <khaos.tian@gmail.com> (http://tz.is/)",
-  "fork": "snowdd1 <snowdd1.theelk@xoxy.net>"
+  "fork": "snowdd1 <snowdd1.theelk@xoxy.net>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/snowdd1/HAP-NodeJS-KNX/issues"
