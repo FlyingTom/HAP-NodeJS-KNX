@@ -23,10 +23,15 @@ To generate a device oriented file, I used the following rules to configure my l
   Example "Kitchen ceiling light brightness broadcasting 1/1/2" with group address 1/1/4
 
 This example has now 4 addresses:
+
 1/1/1 "Kitchen ceiling light"
+
 1/1/2 "Kitchen ceiling light brightness 1/1/1B"
+
 1/1/3 "Kitchen ceiling light return 1/1/1"
+
 1/1/4 "Kitchen ceiling light brightness broadcasting 1/1/2"
+
 
 Export your project with the OPC export function. It creates the .esf file needed
 
