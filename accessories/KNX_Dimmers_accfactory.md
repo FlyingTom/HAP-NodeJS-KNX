@@ -13,21 +13,27 @@ These export files represent a KNX *group address structure* which is loosely as
 
 To generate a device oriented file, I used the following rules to configure my lights in ETS:
 
-1. The switching address (write, EIS 1 - 1 bit telegram) for a device has a plain vanilla name
+1. The switching address (write, EIS1 - 1 bit telegram) for a device has a plain vanilla name.
    Example "Kitchen ceiling light" with group address 1/1/1
-2. The broadcasting addresses the device uses to return its status get the switching address at the  end of their names.
+2. The broadcasting addresses the device uses to return its status (german: Rückmeldeobjekt) gets the switching address at the  end of their names.
    Example "Kitchen ceiling light return 1/1/1" with group address 1/1/3
-3. If the device is a dimmer, it has usually at least 2 group addresses: one for switching (see number 1) and one for setting the brightness (EIS 6 - 8 bit telegram)
+3. If the device is a dimmer, it has usually at least 2 group addresses: one for switching (see number 1) and one for setting the brightness (EIS6 - 8 bit telegram)
    The group address used for setting the brightness gets the switching group address at the end of its name, with a upper case letter "B" attached: "Kitchen ceiling light brightness 1/1/1B" with address 1/1/2 
-4. If there is a broadcasting address for publishing the current brightness it gets the group address for setting the brightness attached (no B!)
+4. If there is a broadcasting address for publishing the current brightness (german: Rückmeldeobjekt Helligkeit) it gets the group address for setting the brightness attached (no B!)
   Example "Kitchen ceiling light brightness broadcasting 1/1/2" with group address 1/1/4
-  
+
+This example has now 4 addresses:
+1/1/1 "Kitchen ceiling light"
+1/1/2 "Kitchen ceiling light brightness 1/1/1B"
+1/1/3 "Kitchen ceiling light return 1/1/1"
+1/1/4 "Kitchen ceiling light brightness broadcasting 1/1/2"
+
 Export your project with the OPC export function. It creates the .esf file needed
 
 After exporting 
 ---------------  
 
-Sadly, the OPC export creates the file in ANSI encoding, for which I haven't found a way to read properly with umlauts etc. I used the free notepad++ text editor to convert my files to UTF-8.
+Sadly, the OPC export creates the file in ANSI encoding, for which I haven't found a way to read properly with umlauts etc. I used the free notepad++ text editor to convert my files to UTF-8 (without BOM).
 
 Put your export file into the accessories folder.
 In KNX\_Dimmers\_factory, change filename and row filter in the module.exports section at the end of the file.
